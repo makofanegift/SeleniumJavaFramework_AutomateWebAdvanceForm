@@ -6,7 +6,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import java.io.File;
 
-public class extentReportManager {
+public class ExtentReportManager {
 
     private static String reportFilePath = System.getProperty("user.dir") + "Report/NdosiAutomationReport.html";
     private static ExtentReports extent;
