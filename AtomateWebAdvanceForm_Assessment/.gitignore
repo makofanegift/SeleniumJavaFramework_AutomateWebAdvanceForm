@@ -13,7 +13,14 @@ target/
 *.iml
 *.ipr
 Report/
-
+# IntelliJ IDEA
+.idea/
+# Test reports
+AutomateWebAdvanceForm_AssessmentReport/
+# Maven build files
+target/
+# Logs
+*.log
 ### Eclipse ###
 .apt_generated
 .classpath
