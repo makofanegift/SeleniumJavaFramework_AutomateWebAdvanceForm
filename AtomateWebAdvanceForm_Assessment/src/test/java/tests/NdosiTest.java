@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import utils.Base;
 
@@ -45,6 +46,10 @@ public class NdosiTest extends Base {
         webAutomationAdvanced.confirmPurchase();
         webAutomationAdvanced.viewInvoice();
         webAutomationAdvanced.viewInvoiceDetails();
+    }
+    @AfterClass
+    public void tearDown(){
+        driver.quit(); //close all open instance browsers
     }
 
 }

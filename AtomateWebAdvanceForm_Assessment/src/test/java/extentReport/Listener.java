@@ -33,13 +33,13 @@ public class Listener implements ITestListener {
 
     }
     @Override
-    public void onFinish(ITestContext context){
-        extentReports.flush();
+    public void onStart(ITestContext context){
+        extentReports = ExtentReportManager.extentReports();
 
     }
     @Override
-    public void onStart(ITestContext context){
-        extentReports = ExtentReportManager.extentReports();
+    public void onFinish(ITestContext context){
+        extentReports.flush();
 
     }
 
