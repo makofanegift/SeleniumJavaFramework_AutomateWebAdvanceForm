@@ -1,4 +1,28 @@
 package utils;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+import java.io.File;
+
 public class TakeScreenshots {
+
+    private static  final  String screenshotDir = System.getProperty("user.dir") + "/Screenshots";
+
+    public static String takeSnapshot(WebDriver driver, String screenshotName) {
+
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        File scr = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        File destination = new File(screenshotDir, screenshotName + ".jpeg");
+
+        try{
+            FileUtils.copyFile(scr, destination);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return destination.getAbsolutePath();
+
+    }
 }
